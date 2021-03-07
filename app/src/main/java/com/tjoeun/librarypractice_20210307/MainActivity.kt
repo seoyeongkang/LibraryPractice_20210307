@@ -66,7 +66,7 @@ class MainActivity : BaseActivity() {
     override fun setValues() {
 
 //        인터넷의 이미지를 recentImg에 적용
-        Glide.with(mContext).load("https://spnimage.edaily.co.kr/images/Photo/files/NP/S/2020/10/PS20100800026.jpg").into(recentImg)
+        Glide.with(mContext).load("http://spnimage.edaily.co.kr/images/Photo/files/NP/S/2020/10/PS20100800026.jpg").into(recentImg)
 
     }
 
