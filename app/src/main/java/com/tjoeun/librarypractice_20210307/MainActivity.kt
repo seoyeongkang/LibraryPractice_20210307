@@ -1,11 +1,13 @@
 package com.tjoeun.librarypractice_20210307
 
+import android.Manifest
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.gun0912.tedpermission.PermissionListener
+import com.gun0912.tedpermission.TedPermission
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
@@ -43,7 +45,11 @@ class MainActivity : BaseActivity() {
 
 //            2. 1에서 만든 [행동 방침]을 가지고 => 실제 권한 확인.
 
-
+            TedPermission.with(mContext)
+                .setPermissionListener(pl)
+                .setDeniedMessage("권한을 거부하면 연결이 불가합니다. [설정]>[권한]에서 셋팅해주세요")
+                .setPermissions(Manifest.permission.CALL_PHONE)
+                .check()
         }
 
 //        이미지뷰를 눌렀을때? => 사진 보기 화면으로 이동
